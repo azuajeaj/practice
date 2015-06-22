@@ -1,15 +1,25 @@
 {
   "name": "node-express-handlebars",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.0",
     "express3-handlebars": "^0.5.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azuajeaj/practice.git"
+  },
+  "bugs": {
+    "url": "https://github.com/azuajeaj/practice/issues"
+  },
+  "homepage": "https://github.com/azuajeaj/practice#readme",
+  "description": ""
 }
