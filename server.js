@@ -27,7 +27,7 @@ app.post('/', function(req,res){
 	
 	var balance = req.body.balance;
 	var numRides= Math.floor(balance/(2.75));
-	var tenRidesBal=Math.round(((27.5-balance)/1.1) * 10) / 10;
+	var tenRidesBal=Math.round(((27.50-balance)/1.11) * 100) / 100;
 	res.render('balance', {
 		balance:balance,
 		rides: numRides,
