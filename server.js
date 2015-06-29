@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 
 
 app.get('/', function(req,res){
-	
+
 	res.render('index');
 
 });
@@ -24,20 +24,26 @@ app.get('/about', function(req,res){
 });
 
 app.post('/', function(req,res){
-	
+
 	var balance = req.body.balance;
 	var numRides= Math.floor(balance/(2.75));
+	if(27.5-balance > 5.50){
 	var tenRidesBal=Math.round(((27.50-balance)/1.11) * 100) / 100;
-	res.render('balance', {
+	}
+	else{
+		var tenRidesBal=Math.round(((27.50-balance) * 100) / 100);
+		}
+
+res.render('balance', {
 		balance:balance,
 		rides: numRides,
 		tenRidesBal: tenRidesBal
 	});
-	
+
 });
 
-app.use('/public', express.static('public'));   
+app.use('/public', express.static('public'));
 
-var port = Number(process.env.PORT||3000);  
+var port = Number(process.env.PORT||3000);
 
 app.listen(port);
