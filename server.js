@@ -31,18 +31,20 @@ app.get('/about', function(req,res){
 app.post('/', function(req,res){
 
 	var balance = req.body.balance;
+	var desNumRides = req.body.desNumRides;
 	var numRides= Math.floor(balance/(2.75));
-	if(27.5-balance > 5.50){
-	var tenRidesBal=Math.round(((27.50-balance)/1.11) * 100) / 100;
+	if((desNumRides*2.75)-balance > 5.50){
+	var RidesBal=Math.round(((desNumRides*2.75-balance)/1.11) * 100) / 100;
 	}
 	else{
-		var tenRidesBal=Math.round(((27.50-balance) * 100) / 100);
+		var RidesBal=Math.round(((desNumRides*2.75-balance) * 100) / 100);
 		}
 
 res.render('balance', {
 		balance:balance,
 		rides: numRides,
-		tenRidesBal: tenRidesBal
+		RidesBal: RidesBal,
+		desNumRides:desNumRides
 	});
 
 });
